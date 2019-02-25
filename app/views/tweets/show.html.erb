@@ -22,9 +22,9 @@
   </div>
   <div class="container">
     <% if current_user %>
-      <%= form_tag("/tweets/#{@tweet.id}/comments", method: :post) do %>
-        <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
-        <input type="submit" value="SENT">
+      <%= form_with url:  tweet_comments_path(tweet_id: @tweet.id) do |f| %>
+        <%= f.text_area :contenet, placeholder: "コメントする", name: 'text' %>
+        <%= f.submit value: '送信'%>
       <% end %>
     <% end %>
 <!-- ここから追記してください -->
