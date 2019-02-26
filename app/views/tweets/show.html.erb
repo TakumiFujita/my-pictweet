@@ -1,3 +1,15 @@
+<div id="comment_delete_array">
+<!--   <%= render partial: "comments/comment_delete", collection: @comments, as: :comment %> -->
+</div>
+<% if flash[:success] %>
+  <div class="delete-success-flash">
+    <div class="delete-success-flash__text">
+      <%= flash[:success] %>
+    </div>
+    <div class="delete-success-flash__close.close-btn">×</div>
+  </div>
+<% end %>
+
 <div class ="contents row">
   <div class="content_post" style="background-image: url(<%= @tweet.image %>);">
     <% if user_signed_in? && current_user.id == @tweet.user_id %>
@@ -22,21 +34,16 @@
   </div>
   <div class="container">
     <% if current_user %>
-      <%= form_tag("/tweets/#{@tweet.id}/comments", method: :post) do %>
-        <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
-        <input type="submit" value="SENT">
+      <%= form_with url:  tweet_comments_path(tweet_id: @tweet.id) do |f| %>
+        <%= f.text_area :contenet, placeholder: "コメントする", name: 'text' %>
+        <%= f.submit value: '送信'%>
       <% end %>
     <% end %>
-<!-- ここから追記してください -->
+
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
       <% if @comments %>
-        <% @comments.each do |comment| %>
-          <p>
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-            <%= comment.text %>
-          </p>
-        <% end %>
+      <%= render partial: "comment", collection: @comments %>
       <% end %>
     </div>
   </div>
