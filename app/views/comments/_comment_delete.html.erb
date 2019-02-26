@@ -1,0 +1,18 @@
+<div class="dialog-box_comment"{"data-comment-id": <%= comment.id %>}>
+  <div class="delete-dialog">
+    <div class="delete-dialog__message">
+      <p>確認</p>
+      <h2>削除されたコメントは元に戻せません。</h2><br><br>
+      <h2>本当に削除しますか？</h2>
+    </div>
+    <div class="delete-dialog__buttons">
+      <div class="delete-dialog__buttons__cancel">キャンセル</div>
+      <div class="delete-dialog__buttons__submit">
+        <%= link_to tweet_comment_path(tweet_id: comment.tweet_id, id: comment.id), method: "delete", class: "confirm_delete" do %>
+          コメントを削除する
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="delete-overlay"></div>
