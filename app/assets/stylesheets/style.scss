@@ -341,6 +341,12 @@ form {
     border-radius: 5px;
     font-family: "游ゴシック", "YuGothic";
   }
+  .image_icon {
+    font-size:25px;
+  }
+  #upload-icon {
+    display:none;
+  }
   input[type="submit"] {
     @extend .transition;
     background-color: $accent;
