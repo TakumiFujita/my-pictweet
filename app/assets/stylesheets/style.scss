@@ -347,6 +347,9 @@ form {
   #upload-icon {
     display:none;
   }
+  .img_hidden {
+    display:none;
+  }
   input[type="submit"] {
     @extend .transition;
     background-color: $accent;

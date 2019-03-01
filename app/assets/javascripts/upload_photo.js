@@ -1,0 +1,16 @@
+$( document ).on('turbolinks:load', function() {
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#img_prev').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#upload-icon").change(function(){
+    $('#img_prev').removeClass('img_hidden');
+    readURL(this);
+  });
+});
