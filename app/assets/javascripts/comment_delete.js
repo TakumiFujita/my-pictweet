@@ -1,15 +1,3 @@
-// $(document).on('turbolinks:load', function() {
-//   $(document).on("click", ".trash-can", function(){
-//       $(".contents").append('<div id="delete-overlay"></div>');
-//       $(".dialog-box_comment").fadeIn("normal");
-//       $("#delete-overlay").fadeIn("normal");
-//       $(".delete-dialog__buttons__cancel,#delete-overlay").unbind().click(function(){
-//         $(".dialog-box_comment,#delete-overlay").hide();
-//       });
-//     }
-//   );
-// });
-
 function buildHTML(tweet_id,id){
   var html = `
   <div class="dialog-box_comment" data-comment-id = "${id}">
@@ -31,7 +19,6 @@ function buildHTML(tweet_id,id){
   <div id="delete-overlay"></div>`
   return html;
 }
-
 
 $(document).on('turbolinks:load', function() {
   $(document).on("click", ".trash-can", function(){
