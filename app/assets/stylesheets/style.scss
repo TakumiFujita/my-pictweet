@@ -378,6 +378,21 @@ form {
     }
   }
 }
+.vertical_like {
+  padding:5px;
+  .like-icon {
+    color:#ff4500;
+  }
+  .count_like-icon {
+    color:#ff4500;
+  }
+  .like-normal {
+    color:#a9a9a9;
+  }
+  .count_like-normal {
+    color:#a9a9a9;
+  }
+}
 
 footer {
   @include boxBase;

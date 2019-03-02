@@ -16,10 +16,12 @@
       </ul>
   </div>
   <%= simple_format(tweet.text) %>
+  <div id="likes_buttons_<%= tweet.id %> likes_button_index">
+    <%= render partial: 'likes/like_index', locals: { tweet: tweet, likes: @likes} %>
+  </div>
   <span class="name">
     <a href="/users/<%= tweet.user_id %>">
       <span>投稿者</span><%= tweet.user.nickname %>
     </a>
   </span>
 </div>
-
