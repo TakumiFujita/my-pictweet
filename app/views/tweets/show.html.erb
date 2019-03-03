@@ -45,5 +45,8 @@
       <%= render partial: "comment", collection: @comments %>
       <% end %>
     </div>
+    <div id="likes_buttons_<%= @tweet.id %>">
+      <%= render partial: 'likes/like', locals: { tweet: @tweet, likes: @likes} %>
+    </div>
   </div>
 </div>
