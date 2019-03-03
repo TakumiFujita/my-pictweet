@@ -8,7 +8,7 @@
       <%= f.label :image, class: "upload-label", for: "upload-icon" do %>
         <i class="far fa-image image_icon"></i><br>
         <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/png,image/gif', id: "upload-icon" %>
-        <img id="img_prev" src="#" class='img_hidden' width="150px" height="auto">
+          <%= image_tag "", id: "img_prev", class:'img_hidden_edit', width: "150px", height: "auto" %>
       <% end %>
       <%= f.submit value: '送信' %>
     <% end %>
