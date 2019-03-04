@@ -1,18 +1,29 @@
 <% if user_signed_in? %>
-
-  <% unless tweet.like_user(current_user.id).blank? %>
-    <%= link_to tweet_like_path(tweet_id: tweet.id ,id: tweet.likes[0].id), method: :delete, remote: true do %>
+  <%# 投稿に対していいねをしているユーザーを探し、その中に現在ログインしているユーザーが入っていない場合、かつ現在のログインユーザーが投稿者でない場合 %>
+  <% if tweet.like_user(current_user.id).blank? && current_user != tweet.user %>
+    <%= link_to tweet_likes_path(tweet.id), method: :post, remote: true do %>
       <div class="vertical_like">
-        <i class="fas fa-heart like-icon"></i>
+        <i class="far fa-heart like-normal"></i>
         <span>
           <%= tweet.likes_count %>
         </span>
       </div>
     <% end %>
-  <% else %>
-    <%= link_to tweet_likes_path(tweet.id), method: :post, remote: true do %>
-      <div class="vertical_like">
+  <% elsif tweet.user_id == current_user.id %>
+    <div class="vertical_like">
+      <% if tweet.likes.length == 0 %>
         <i class="far fa-heart like-normal"></i>
+      <% else %>
+        <i class="fas fa-heart like-icon"></i>
+      <% end %>
+      <span>
+        <%= tweet.likes_count %>
+      </span>
+    </div>
+  <% else %>
+    <%= link_to tweet_like_path(tweet_id: tweet.id, id: tweet.likes[0].id), method: :delete, remote: true do %>
+      <div class="vertical_like">
+        <i class="fas fa-heart like-icon"></i>
         <span>
           <%= tweet.likes_count %>
         </span>
