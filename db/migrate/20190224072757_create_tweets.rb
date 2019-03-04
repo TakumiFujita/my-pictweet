@@ -4,7 +4,7 @@ class CreateTweets < ActiveRecord::Migration[5.2]
       t.text           :text
       t.text           :image
       t.references     :user
-      t.integer        :likes_count
+      t.integer        :likes_count, default: 0
       t.timestamps null:true
     end
   end
