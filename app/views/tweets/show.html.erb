@@ -13,7 +13,7 @@
   <div class="content_post" style="background-image: url(<%= @tweet.image %>);">
     <% if user_signed_in? && current_user.id == @tweet.user_id %>
       <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
+        <span><%= image_tag 'list-icon.png' %></span>
       <ul class="more_list">
         <li>
           <%= link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get %>
@@ -31,6 +31,7 @@
       </a>
     </span>
   </div>
+
   <div class="container">
     <% if current_user %>
       <%= form_with url: tweet_comments_path(tweet_id: @tweet.id) do |f| %>
@@ -38,13 +39,13 @@
         <%= f.submit value: '送信'%>
       <% end %>
     <% end %>
-
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
-      <% if @comments %>
-      <%= render partial: "comment", collection: @comments %>
-      <% end %>
+        <% if @comments %>
+          <%= render partial: "comment", collection: @comments %>
+        <% end %>
     </div>
+    <%= paginate(@comments) %>
     <div id="likes_buttons_<%= @tweet.id %>">
       <%= render partial: 'likes/like', locals: { tweet: @tweet, likes: @likes} %>
     </div>

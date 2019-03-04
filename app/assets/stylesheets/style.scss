@@ -342,6 +342,10 @@ form {
     border-radius: 5px;
     font-family: "游ゴシック", "YuGothic";
   }
+  input,textarea:focus {
+  outline: 0;
+  border-color: #1e90ff;
+  }
   .image_icon {
     font-size:25px;
   }
@@ -377,6 +381,16 @@ form {
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+.pagination {
+  display:flex;
+  justify-content: flex-end;
+  .page {
+    margin-left:5px;
+  }
+  .next {
+    margin-left:10px;
   }
 }
 .vertical_like {
