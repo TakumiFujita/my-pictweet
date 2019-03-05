@@ -220,6 +220,30 @@ div.contents.row {
       font-size: 1.2em;
     }
   }
+  .link_session {
+    font-family: 'Source Sans Pro', 'Helvetica', "Avenir", "游ゴシック";
+    width:320px;
+    height:50px;
+    display:flex;
+    flex-direction:row;
+    .google-icon-box {
+      width: 50px;
+      background-color: #dc143c;
+      .icon_google {
+        color: #dc143c;
+        background-color: yellow;
+        font-size: 3em;
+        border: none;
+      }
+    }
+    .session_google {
+      width: 270px;
+      text-align:center;
+      line-height: 50px;
+      color: white;
+      background-color: red;
+    }
+  }
   .new_user{
   font-family: "游ゴシック", "YuGothic";
   }
