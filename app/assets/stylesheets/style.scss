@@ -37,6 +37,10 @@ $white: white;
   margin: $margin;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 body,html {
   height: 100%;
   background-color: $lightGray;
@@ -51,7 +55,7 @@ line-height: 1.57;
   letter-spacing: 0.15em;
   font-size: 16px;
   color: $dark;
-  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+  font-family: "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   margin: 0;
 }
 
@@ -69,7 +73,11 @@ a {
 }
 
 .serif {
-  font-family: 'ほのか明朝',serif;
+  font-family: "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6",'ほのか明朝',serif;
+}
+
+.tweet_text {
+  font-size:16px;
 }
 
 .ultra {
@@ -220,28 +228,63 @@ div.contents.row {
       font-size: 1.2em;
     }
   }
-  .link_session {
-    font-family: 'Source Sans Pro', 'Helvetica', "Avenir", "游ゴシック";
-    width:320px;
-    height:50px;
-    display:flex;
-    flex-direction:row;
-    .google-icon-box {
-      width: 50px;
-      background-color: #dc143c;
-      .icon_google {
-        color: #dc143c;
-        background-color: yellow;
-        font-size: 3em;
-        border: none;
+  .session_select-content {
+    width:500px;
+    height:300px;
+    background-color:#fff;
+    margin:70px auto 0;
+    padding:70px 90px;
+    &_inner {
+      width:320px;
+      height:150px;
+      padding:5px 0px;
+      .link_session {
+        font-family: 'Source Sans Pro', 'Helvetica', "Avenir", "游ゴシック";
+        width:320px;
+        height:50px;
+        display:flex;
+        flex-direction:row;
+        text-align:center;
+        line-height: 50px;
+        .google-icon-box {
+          width: 50px;
+          background-color: #dc143c;
+          .icon_google {
+            color: #fff;
+            background-color: #dc143c;
+            font-size: 1.5em;
+            line-height: 50px;
+          }
+        }
+        .session_google {
+          width: 270px;
+          color: #fff;
+          background-color: #f00;
+          font-size:14px;
+        }
+        .normal-session-icon-box {
+          width: 50px;
+          background-color: #a9a9a9;
+          .icon_mail {
+            color: #fff;
+            background-color: #a9a9a9;
+            font-size: 1.5em;
+            line-height: 50px;
+          }
+        }
+        .session_normal {
+          width: 270px;
+          color: #fff;
+          background-color: #c0c0c0;
+          font-size:14px;
+        }
       }
-    }
-    .session_google {
-      width: 270px;
-      text-align:center;
-      line-height: 50px;
-      color: white;
-      background-color: red;
+      .session_select {
+        text-align: center;
+        width: 320px;
+        height: 40px;
+        line-height: 40px;
+      }
     }
   }
   .new_user{
@@ -315,7 +358,7 @@ div.contents.row {
       right: 100px;
       bottom: 30px;
       margin: 0;
-      font-size: 20px;
+      font-size: 18px;
       z-index: 2;
       font-weight: bold;
       text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
