@@ -288,6 +288,6 @@ Devise.setup do |config|
   #   include Turbolinks::Controller
   # end
   config.omniauth :google_oauth2,
-                  Rails.application.secrets.google_client_id,
-                  Rails.application.secrets.google_client_secret
+                Rails.application.credentials.google_client_id,
+                Rails.application.credentials.google_client_secret
 end
