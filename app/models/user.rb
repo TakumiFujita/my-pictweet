@@ -7,8 +7,23 @@ class User < ApplicationRecord
   has_many :comments
   validates :nickname,               presence: true, length: { maximum: 6 }
   validates :email,                  presence: true
-  validates :password,               presence: true
-  validates :password_confirmation,  presence: true
+  with_options on: :create? do
+    validates :password,  presence: true
+    validates :password_confirmation, presence: true
+  end
+
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
+  end
 
   def self.find_oauth(auth)
     uid = auth.uid

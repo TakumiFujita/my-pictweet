@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'likes/create'
   get 'likes/destroy'
-  devise_for :users, :controllers => {
-    :omniauth_callbacks =>  "users/omniauth_callbacks"
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks", registrations: 'registrations'
   }
   root 'tweets#index'
   resources :tweets do
