@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        email   : メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認）
+        (6_characters_maximum): （最大6文字）
+        remember_me: ログイン状態を保持する
+        log_in: ログイン
+        sign_up: サインアップ
+    errors:
+      messages:
+        not_saved:
+          #one: "1 error prohibited this %{resource} from being saved:"
+          one: "１つのエラーがあります。修正して再度送信して下さい。:"
+          #other: "%{count} errors prohibited this %{resource} from being saved:"
+          other: "%{count}のエラーがあります。修正して再度送信して下さい。"
+
