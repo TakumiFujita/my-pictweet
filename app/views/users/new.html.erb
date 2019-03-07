@@ -1,0 +1,20 @@
+<div class="contents row">
+  <div class= "session_select-content">
+    <div class= "session_select-content_inner">
+      <%= link_to user_google_oauth2_omniauth_authorize_path, class: 'post link_session link_google-omniauth' do %>
+        <div class= "google-icon-box">
+          <i class="fab fa-google-plus-g icon_google"></i>
+        </div>
+        <div class= "session_google">Googleで登録</div>
+      <% end %>
+      <div class= "session_select">or</div>
+      <%= link_to new_user_registration_path, class: 'post link_session link_normal-session' do %>
+        <div class= "normal-session-icon-box">
+          <i class="far fa-envelope icon_mail"></i>
+        </div>
+        <div class= "session_normal">メールアドレスで登録</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

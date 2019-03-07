@@ -15,7 +15,9 @@
         <% end %>
       </ul>
   </div>
+  <div class= "tweet_text">
   <%= simple_format(tweet.text) %>
+  </div>
   <div id="likes_buttons_<%= tweet.id %> likes_button_index">
     <%= render partial: 'likes/like_index', locals: { tweet: tweet, likes: @likes} %>
   </div>
