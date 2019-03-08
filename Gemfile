@@ -43,6 +43,7 @@ end
 
 group :production do
   gem 'pg', '~> 0.18.4'
+  gem 'unicorn', '5.4.1'
 end
 
 group :development do
