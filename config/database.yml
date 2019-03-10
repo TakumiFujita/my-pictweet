@@ -50,7 +50,7 @@ test:
 production:
   <<: *default
   adapter:  mysql2
-  encoding: unicode
+  encoding: utf8
   username: my-pictweet
   password: <%= ENV['MY-PICTWEET_DATABASE_PASSWORD'] %>
   database: my-pictweet_production
