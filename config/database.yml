@@ -53,3 +53,4 @@ production:
   encoding: unicode
   username: my-pictweet
   password: <%= ENV['MY-PICTWEET_DATABASE_PASSWORD'] %>
+  database: my-pictweet_production
