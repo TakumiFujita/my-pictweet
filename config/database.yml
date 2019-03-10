@@ -51,7 +51,7 @@ production:
   <<: *default
   adapter:  mysql2
   encoding: utf8
-  username: my-pictweet
+  username: root
   password: <%= ENV['MY-PICTWEET_DATABASE_PASSWORD'] %>
   database: my-pictweet_production
   socket: /var/lib/mysql/mysql.sock
