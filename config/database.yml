@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  adapter:  postgresql
+  adapter:  mysql2
   encoding: unicode
   username: my-pictweet
   password: <%= ENV['MY-PICTWEET_DATABASE_PASSWORD'] %>
