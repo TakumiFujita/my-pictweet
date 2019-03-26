@@ -24,7 +24,7 @@ set :default_env, {
   AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 }
-set :linked_files, %w{ config/mater.key }
+set :linked_files, %w{ config/master.key }
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
@@ -32,13 +32,13 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 
-  desc 'upload mater.key'
+  desc 'upload master.key'
   task :upload do
     on roles(:app) do |host|
       if test "[ ! -d #{shared_path}/config ]"
         execute "mkdir -p #{shared_path}/config"
       end
-      upload!('config/mater.key', "#{shared_path}/config/mater.key")
+      upload!('config/master.key', "#{shared_path}/config/master.key")
     end
   end
   before :starting, 'deploy:upload'

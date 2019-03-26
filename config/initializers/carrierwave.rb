@@ -17,6 +17,5 @@ CarrierWave.configure do |config|
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/takumi.test'
   else
     config.storage :file
-    binding.pry
   end
 end
