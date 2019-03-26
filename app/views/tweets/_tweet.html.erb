@@ -19,7 +19,7 @@
   <%= simple_format(tweet.text) %>
   </div>
   <div id="likes_buttons_<%= tweet.id %> likes_button_index">
-    <%= render partial: 'likes/like_index', locals: { tweet: tweet, likes: @likes} %>
+    <%= render partial: 'likes/like_index', locals: { tweet: tweet, likes: @like} %>
   </div>
   <span class="name">
     <a href="/users/<%= tweet.user_id %>">
