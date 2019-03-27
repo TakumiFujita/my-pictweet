@@ -10,11 +10,12 @@ CarrierWave.configure do |config|
       provider: 'AWS',
       aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
       aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
-      region: 'ap-northeast-1' #例 'ap-northeast-1'
+      region: 'ap-northeast-1'
+      path_style: true
     }
 
-    config.fog_directory  = 'takumi.test'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/takumi.test'
+    config.fog_directory  = 'takumi-test'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/takumi-test'
   else
     config.storage :file
   end
